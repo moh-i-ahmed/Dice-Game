@@ -1,5 +1,7 @@
 package dice_game;
 
+import java.util.Arrays;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -40,48 +42,39 @@ public class RollControl {
     	 
     	 int score = Integer.parseInt(mainScore.getText());
     	 
-    	 
-    	 
-    	 if(rollDice[0] == rollDice[1]) {
-    		 score = score + rollDice[0] + rollDice[1];
-    		 newScore.setText(Integer.toString(rollDice[0] + rollDice[1]));
-    		 mainScore.setText(Integer.toString(score));
-    	 }
-    	 else if (rollDice[1] == rollDice[2]) {
-    		 score = score + rollDice[1] + rollDice[2];
-    		 newScore.setText(Integer.toString(rollDice[1] + rollDice[2]));
-    		 mainScore.setText(Integer.toString(score));
-    	 }
-    	 else if (rollDice[0] == rollDice[2]) {
-    		 score = score + rollDice[0] + rollDice[2];
-    		 newScore.setText(Integer.toString(rollDice[0] + rollDice[2]));
-    		 mainScore.setText(Integer.toString(score));
-    	 }
-    	 
-    	 if(rollDice[0] == rollDice[1] && rollDice[1] == rollDice[2])
+    	 int scores = 0;
+    	 boolean flag = true;
+    	 int first = rollDice[0];
+    	 for(int i = 1; i < 3 && flag; i++)
     	 {
-    		 score = score + rollDice[0] * 3;
-    		 newScore.setText(Integer.toString(rollDice[0] * 3));
-    		 mainScore.setText(Integer.toString(score));
+    	 if (rollDice[i] != first) flag = false;
+
     	 }
-    	 
-    	 if(rollDice[0] != rollDice[1] && rollDice[1] != rollDice[2] && rollDice[0] != rollDice[2])
+    	 if (flag)
+    	 scores= rollDice[0] +  rollDice[1] + rollDice[2];
+    	 else
     	 {
-    		 score = score + 1;
-    		 newScore.setText(Integer.toString(1));
-    		 mainScore.setText(Integer.toString(score));
+    	 Arrays.sort(rollDice);
+    	 if (rollDice[0] == rollDice[1])
+    	 scores = rollDice[0] + rollDice[1];
+    	 else if (rollDice[1] == rollDice[2])
+    	 scores = rollDice[1] + rollDice[2];
+    	 else
+    	 scores=1;
+
     	 }
-    	 
-    	 
+
+    	 newScore.setText(Integer.toString(scores));
+    	 mainScore.setText(Integer.toString(score + scores));
     	 
     	 
     	 
     	
-    	String first = Integer.toString(rollDice[0]);
+    	String firstt = Integer.toString(rollDice[0]);
     	String second = Integer.toString(rollDice[1]);
-    	String third = Integer.toString(rollDice[1]);
+    	String third = Integer.toString(rollDice[2]);
     	
-    	cube_1.setText(first);
+    	cube_1.setText(firstt);
     	cube_2.setText(second);
     	cube_3.setText(third);
     	
