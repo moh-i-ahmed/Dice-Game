@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.14824120603015076" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dice_game.RollControl">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="86.0" prefWidth="598.0">
+         <children>
+            <Label layoutX="31.0" layoutY="17.0" prefHeight="21.0" prefWidth="89.0" text="Player name:" />
+            <Label fx:id="play_name" layoutX="127.0" layoutY="17.0" prefHeight="21.0" prefWidth="59.0" text="" />
+            <Label layoutX="424.0" layoutY="17.0" prefHeight="21.0" prefWidth="47.0" text="Score:" />
+            <Label fx:id="mainScore" layoutX="478.0" layoutY="17.0" prefHeight="21.0" prefWidth="73.0" text="0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="598.0">
+         <children>
+            <Label fx:id="cube_1" alignment="CENTER" layoutX="156.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="cube_2" alignment="CENTER" layoutX="275.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="cube_3" alignment="CENTER" layoutX="397.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Button layoutX="275.0" layoutY="219.0" mnemonicParsing="false" onAction="#onRollPressed" text="Roll" />
+            <Label fx:id="newScore" layoutX="345.0" layoutY="151.0" prefHeight="21.0" prefWidth="46.0" />
+            <Label layoutX="172.0" layoutY="151.0" prefHeight="21.0" prefWidth="163.0" text="Score got from this roll:" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
