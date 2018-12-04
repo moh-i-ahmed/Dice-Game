@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -15,11 +16,23 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="598.0">
          <children>
-            <Label fx:id="cube_1" alignment="CENTER" layoutX="156.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="" />
-            <Label fx:id="cube_2" alignment="CENTER" layoutX="275.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="" />
-            <Label fx:id="cube_3" alignment="CENTER" layoutX="397.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="cube_1" alignment="CENTER" layoutX="156.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+            <Label fx:id="cube_2" alignment="CENTER" layoutX="275.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+            <Label fx:id="cube_3" alignment="CENTER" layoutX="397.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
             <Button layoutX="275.0" layoutY="219.0" mnemonicParsing="false" onAction="#onRollPressed" text="Roll" />
-            <Label fx:id="newScore" layoutX="345.0" layoutY="151.0" prefHeight="21.0" prefWidth="46.0" />
+            <Label fx:id="newScore" layoutX="345.0" layoutY="151.0" prefHeight="21.0" prefWidth="46.0">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
             <Label layoutX="172.0" layoutY="151.0" prefHeight="21.0" prefWidth="163.0" text="Score got from this roll:" />
          </children></AnchorPane>
   </items>
