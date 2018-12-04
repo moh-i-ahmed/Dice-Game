@@ -5,35 +5,40 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.14824120603015076" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dice_game.RollControl">
+<SplitPane dividerPositions="0.27638190954773867" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dice_game.RollControl">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="86.0" prefWidth="598.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="598.0">
          <children>
-            <Label layoutX="31.0" layoutY="17.0" prefHeight="21.0" prefWidth="89.0" text="Player name:" />
-            <Label fx:id="play_name" layoutX="127.0" layoutY="17.0" prefHeight="21.0" prefWidth="59.0" text="" />
-            <Label layoutX="424.0" layoutY="17.0" prefHeight="21.0" prefWidth="47.0" text="Score:" />
-            <Label fx:id="mainScore" layoutX="478.0" layoutY="17.0" prefHeight="21.0" prefWidth="73.0" text="0" />
+            <Label layoutX="82.0" layoutY="20.0" prefHeight="21.0" prefWidth="89.0" text="Player name:" />
+            <Label fx:id="play_name" layoutX="178.0" layoutY="20.0" prefHeight="21.0" prefWidth="59.0" text="" />
+            <Label layoutX="82.0" layoutY="65.0" prefHeight="21.0" prefWidth="47.0" text="Score:" />
+            <Label fx:id="mainScore" layoutX="136.0" layoutY="65.0" prefHeight="21.0" prefWidth="73.0" text="0" />
+            <Label layoutX="367.0" layoutY="65.0" prefHeight="21.0" prefWidth="47.0" text="Score:" />
+            <Label fx:id="mainScore1" layoutX="421.0" layoutY="65.0" prefHeight="21.0" prefWidth="73.0" text="0" />
+            <Label layoutX="367.0" layoutY="20.0" prefHeight="21.0" prefWidth="89.0" text="Player name:" />
+            <Label fx:id="play_name1" layoutX="463.0" layoutY="20.0" prefHeight="21.0" prefWidth="59.0" text="" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="598.0">
          <children>
-            <Label fx:id="cube_1" alignment="CENTER" layoutX="156.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="">
-               <font>
-                  <Font size="30.0" />
-               </font></Label>
-            <Label fx:id="cube_2" alignment="CENTER" layoutX="275.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="">
-               <font>
-                  <Font size="30.0" />
-               </font></Label>
-            <Label fx:id="cube_3" alignment="CENTER" layoutX="397.0" layoutY="54.0" prefHeight="21.0" prefWidth="46.0" text="">
-               <font>
-                  <Font size="30.0" />
-               </font></Label>
-            <Button layoutX="275.0" layoutY="219.0" mnemonicParsing="false" onAction="#onRollPressed" text="Roll" />
-            <Label fx:id="newScore" layoutX="345.0" layoutY="151.0" prefHeight="21.0" prefWidth="46.0">
+            <Label fx:id="cube_1" alignment="CENTER" layoutX="60.0" layoutY="48.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="cube_2" alignment="CENTER" layoutX="131.0" layoutY="48.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="cube_3" alignment="CENTER" layoutX="203.0" layoutY="48.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Button layoutX="109.0" layoutY="200.0" mnemonicParsing="false" onAction="#onRollPressed" text="Roll" />
+            <Label fx:id="newScore" layoutX="213.0" layoutY="125.0" prefHeight="21.0" prefWidth="46.0">
                <font>
                   <Font size="25.0" />
                </font></Label>
-            <Label layoutX="172.0" layoutY="151.0" prefHeight="21.0" prefWidth="163.0" text="Score got from this roll:" />
+            <Label layoutX="50.0" layoutY="132.0" prefHeight="21.0" prefWidth="163.0" text="Score got from this roll:" />
+            <Button layoutX="388.0" layoutY="197.0" mnemonicParsing="false" onAction="#onRollPressed1" text="Roll" />
+            <Label layoutX="329.0" layoutY="129.0" prefHeight="21.0" prefWidth="163.0" text="Score got from this roll:" />
+            <Label fx:id="cube_11" alignment="CENTER" layoutX="339.0" layoutY="45.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="cube_21" alignment="CENTER" layoutX="410.0" layoutY="45.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="cube_31" alignment="CENTER" layoutX="482.0" layoutY="45.0" prefHeight="21.0" prefWidth="46.0" text="" />
+            <Label fx:id="newScore1" layoutX="492.0" layoutY="122.0" prefHeight="21.0" prefWidth="46.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </items>
 </SplitPane>
