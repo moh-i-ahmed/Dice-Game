@@ -1,89 +1,128 @@
 package dice_game;
 
-import java.util.Arrays;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class RollControl {
 
-    @FXML
-    private Label play_name;
-    @FXML
-    private Label cube_1;
-    @FXML
-    private Label cube_2;
-    @FXML
-    private Label cube_3;
-    @FXML
-    private Label mainScore;
-    @FXML
-    private Label newScore;
-    
-    public void setText(String pl_name)
-    {
-    	play_name.setText(pl_name);
+	@FXML
+	private Label play_name;
+	@FXML
+	private Label play_name1;
+	@FXML
+	private Label cube_1;
+	@FXML
+	private Label cube_2;
+	@FXML
+	private Label cube_3;
+	@FXML
+	private Label cube_11;
+	@FXML
+	private Label cube_21;
+	@FXML
+	private Label cube_31;
+	@FXML
+	private Label mainScore;
+	@FXML
+	private Label newScore;
+	@FXML
+	private Label mainScore1;
+	@FXML
+	private Label newScore1;
+	@FXML
+	private Button roll1;
+	@FXML
+	private Button roll2;
+	@FXML
+	private Label round_count;
+	
+	
+	Player p1 = new Player();
+	Player p2 = new Player();
+	
+	
+	@FXML
+    public void close(){
+        // get a handle to the stage
+        Stage stage = (Stage) roll1.getScene().getWindow();
+        // do what you have to do
+        stage.close();
     }
+	
 
+	public void setText(String pl_name)
+	{
+		play_name.setText(pl_name);
+		 p1.setName(pl_name);
+	}
+
+	public void setText1(String pl_name)
+	{
+		play_name1.setText(pl_name);
+		 p2.setName(pl_name);
+	}
+	
+	public String getScore()
+	{
+		return mainScore.getText();
+	}
     
-    
-    @FXML
-    void onRollPressed(ActionEvent event) {
-    	 
-    	Dice dices = new Dice(6);
-    	
-    	int [] rollDice=new int[3];
-    	 for(int i=0;i<3;i++)
-    	 {
-    	 rollDice[i]=dices.rollDice(6);
-    	 }
-    	 
-    	 
-    	 int score = Integer.parseInt(mainScore.getText());
-    	 
-    	 int scores = 0;
-    	 boolean flag = true;
-    	 int first = rollDice[0];
-    	 for(int i = 1; i < 3 && flag; i++)
-    	 {
-    	 if (rollDice[i] != first) flag = false;
+	Game game = new Game(p1, p2);
+	
+	@FXML
+	void onRollPressed(ActionEvent event) {
 
-    	 }
-    	 if (flag)
-    	 scores= rollDice[0] +  rollDice[1] + rollDice[2];
-    	 else
-    	 {
-    	 Arrays.sort(rollDice);
-    	 if (rollDice[0] == rollDice[1])
-    	 scores = rollDice[0] + rollDice[1];
-    	 else if (rollDice[1] == rollDice[2])
-    	 scores = rollDice[1] + rollDice[2];
-    	 else
-    	 scores=1;
+		newScore.setText(Integer.toString(game.score(p1)));
+		mainScore.setText(Integer.toString(p1.getPlayerScore()));
+		
+		cube_1.setText(Integer.toString(game.dice.getFirst()));
+		cube_2.setText(Integer.toString(game.dice.getSecond()));
+		cube_3.setText(Integer.toString(game.dice.getThird()));
+		
+		roll1.setDisable(true);
+		roll2.setDisable(false);
+		
+		round_count.setText(Integer.toString(game.turn()));
 
-    	 }
+	}
 
-    	 newScore.setText(Integer.toString(scores));
-    	 mainScore.setText(Integer.toString(score + scores));
-    	 
-    	 
-    	 
-    	
-    	String firstt = Integer.toString(rollDice[0]);
-    	String second = Integer.toString(rollDice[1]);
-    	String third = Integer.toString(rollDice[2]);
-    	
-    	cube_1.setText(firstt);
-    	cube_2.setText(second);
-    	cube_3.setText(third);
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    }
+	
+	
+	
+	
+	@FXML
+	void onRollPressed1(ActionEvent event) {
+
+		newScore1.setText(Integer.toString(game.score(p2)));
+		mainScore1.setText(Integer.toString(p2.getPlayerScore()));
+		
+		cube_11.setText(Integer.toString(game.dice.getFirst()));
+		cube_21.setText(Integer.toString(game.dice.getSecond()));
+		cube_31.setText(Integer.toString(game.dice.getThird()));
+		
+		round_count.setText(Integer.toString(game.turn()));
+
+		roll1.setDisable(false);
+		roll2.setDisable(true);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

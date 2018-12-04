@@ -18,7 +18,7 @@
             <Label layoutX="393.0" layoutY="20.0" prefHeight="21.0" prefWidth="89.0" text="Player name:" />
             <Label fx:id="play_name1" layoutX="489.0" layoutY="20.0" prefHeight="21.0" prefWidth="59.0" text="" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="282.0" layoutY="20.0" prefHeight="21.0" prefWidth="59.0" text="ROUND" />
-            <Label fx:id="round_count" alignment="CENTER" layoutX="296.0" layoutY="55.0" prefHeight="21.0" prefWidth="31.0" />
+            <Label id="round_count" fx:id="round_count" alignment="CENTER" layoutX="296.0" layoutY="55.0" prefHeight="21.0" prefWidth="31.0" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="598.0">
          <children>

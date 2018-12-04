@@ -1,18 +1,52 @@
 package dice_game;
 
 public class Dice {
-private int sides;
- public Dice(int sidesToBeSet)
- {
- sides = sidesToBeSet;
- }
+	private int sides;
+	private final int SIDES = 6;
+	private int first, second, third;
+
+	public Dice() {
+		sides = SIDES;
+	}
+	
+
+	public int getSecond() {
+		return second;
+	}
 
 
- public int rollDice(int sidesToBeSet)
- {
+	public void setSecond(int second) {
+		this.second = second;
+	}
 
-	int side = (1 + (int)(Math.random() * sides));
-	 
- return side;
- }
+
+	public int getThird() {
+		return third;
+	}
+
+
+	public void setThird(int third) {
+		this.third = third;
+	}
+
+
+	public int getFirst() {
+		return first;
+	}
+
+	public void setFirst(int first) {
+		this.first = first;
+	}
+
+
+
+
+
+	public Dice(int sidesToBeSet){
+		sides = sidesToBeSet;
+	}
+
+	public int rollDice(int sidesToBeSet) {
+		return (1 + (int)(Math.random() * sides));
+	}
 }
