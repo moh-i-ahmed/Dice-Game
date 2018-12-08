@@ -1,10 +1,16 @@
 package dice_game;
 
 
+import java.io.File;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class RollControl {
@@ -14,17 +20,17 @@ public class RollControl {
 	@FXML
 	private Label play_name1;
 	@FXML
-	private Label cube_1;
+	private ImageView cube_1;
 	@FXML
-	private Label cube_2;
+	private ImageView cube_2;
 	@FXML
-	private Label cube_3;
+	private ImageView cube_3;
 	@FXML
-	private Label cube_11;
+	private ImageView cube_11;
 	@FXML
-	private Label cube_21;
+	private ImageView cube_21;
 	@FXML
-	private Label cube_31;
+	private ImageView cube_31;
 	@FXML
 	private Label mainScore;
 	@FXML
@@ -43,6 +49,7 @@ public class RollControl {
 	
 	Player p1 = new Player();
 	Player p2 = new Player();
+
 	
 	
 	@FXML
@@ -73,15 +80,40 @@ public class RollControl {
     
 	Game game = new Game(p1, p2);
 	
+	
+	
+	
 	@FXML
 	void onRollPressed(ActionEvent event) {
 
+		try {
+
+			String musicFile = "roll_sound.mp3";     // For example
+
+			Media sound = new Media(new File(musicFile).toURI().toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(sound);
+			mediaPlayer.play();
+
+			Thread.sleep(700);
+			
+		}catch(Exception e) {}
+		
+		
+		
+		
 		newScore.setText(Integer.toString(game.score(p1)));
 		mainScore.setText(Integer.toString(p1.getPlayerScore()));
 		
-		cube_1.setText(Integer.toString(game.dice.getFirst()));
-		cube_2.setText(Integer.toString(game.dice.getSecond()));
-		cube_3.setText(Integer.toString(game.dice.getThird()));
+		
+		Image img1 = new Image("file:"+ game.dice.getFirst() +".png");
+		cube_1.setImage(img1);
+		
+		Image img2 = new Image("file:"+ game.dice.getSecond() +".png");
+		cube_2.setImage(img2);
+		
+		Image img3 = new Image("file:"+ game.dice.getThird() +".png");
+		cube_3.setImage(img3);
+		
 		
 		roll1.setDisable(true);
 		roll2.setDisable(false);
@@ -97,12 +129,32 @@ public class RollControl {
 	@FXML
 	void onRollPressed1(ActionEvent event) {
 
+		try {
+			
+			String musicFile = "roll_sound.mp3";     // For example
+
+			Media sound = new Media(new File(musicFile).toURI().toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(sound);
+			mediaPlayer.play();
+
+			Thread.sleep(700);
+			
+		}catch(Exception e) {}
+		
+		
+		
 		newScore1.setText(Integer.toString(game.score(p2)));
 		mainScore1.setText(Integer.toString(p2.getPlayerScore()));
 		
-		cube_11.setText(Integer.toString(game.dice.getFirst()));
-		cube_21.setText(Integer.toString(game.dice.getSecond()));
-		cube_31.setText(Integer.toString(game.dice.getThird()));
+		
+		Image img1 = new Image("file:"+ game.dice.getFirst() +".png");
+		cube_11.setImage(img1);
+		
+		Image img2 = new Image("file:"+ game.dice.getSecond() +".png");
+		cube_21.setImage(img2);
+		
+		Image img3 = new Image("file:"+ game.dice.getThird() +".png");
+		cube_31.setImage(img3);
 		
 		round_count.setText(Integer.toString(game.turn()));
 

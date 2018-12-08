@@ -37,9 +37,7 @@ public class Dice {
 	public void setFirst(int first) {
 		this.first = first;
 	}
-
-
-
+	
 
 
 	public Dice(int sidesToBeSet){
