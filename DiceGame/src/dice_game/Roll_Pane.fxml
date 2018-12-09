@@ -9,9 +9,9 @@
 
 <SplitPane dividerPositions="0.27638190954773867" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #414141;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dice_game.RollControl">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="598.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="598.0" style="-fx-background-color: #595b5b;">
          <children>
-            <Label layoutX="71.0" layoutY="11.0" prefHeight="21.0" prefWidth="89.0" text="Player name" textFill="WHITE" />
+            <Label layoutX="71.0" layoutY="11.0" prefHeight="21.0" prefWidth="89.0" text="Player 1" textFill="WHITE" />
             <Label fx:id="p1_name" layoutX="71.0" layoutY="31.0" prefHeight="21.0" prefWidth="120.0" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
@@ -20,7 +20,7 @@
             <Label fx:id="p1_mainScore" layoutX="125.0" layoutY="67.0" prefHeight="21.0" prefWidth="73.0" text="0" textFill="WHITE" />
             <Label layoutX="439.0" layoutY="66.0" prefHeight="21.0" prefWidth="47.0" text="Score:" textFill="WHITE" />
             <Label fx:id="p2_mainScore" layoutX="493.0" layoutY="66.0" prefHeight="21.0" prefWidth="73.0" text="0" textFill="WHITE" />
-            <Label layoutX="439.0" layoutY="10.0" prefHeight="21.0" prefWidth="89.0" text="Player name" textFill="WHITE" />
+            <Label layoutX="439.0" layoutY="10.0" prefHeight="21.0" prefWidth="89.0" text="Player 2" textFill="WHITE" />
             <Label fx:id="p2_name" layoutX="439.0" layoutY="31.0" prefHeight="21.0" prefWidth="120.0" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
@@ -34,7 +34,7 @@
                   <Font name="System Bold" size="20.0" />
                </font></Label>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="598.0" style="-fx-background-color: #5B9746;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="598.0" style="-fx-background-color: #595b5b;">
          <children>
             <Button fx:id="btn_roll1" layoutX="109.0" layoutY="200.0" mnemonicParsing="false" onAction="#onRollPressed" style="-fx-background-radius: 10; -fx-border-width: 2;" text="Roll" textAlignment="CENTER" textFill="#4d4d4d">
                <font>
@@ -47,7 +47,7 @@
                <font>
                   <Font size="25.0" />
                </font></Label>
-            <Label layoutX="50.0" layoutY="132.0" prefHeight="21.0" prefWidth="163.0" text="Score got from this roll:" textFill="#e7e7e7" />
+            <Label layoutX="50.0" layoutY="132.0" prefHeight="21.0" prefWidth="163.0" text="Score from this roll:" textFill="#e7e7e7" />
             <Button fx:id="btn_roll2" layoutX="414.0" layoutY="203.0" mnemonicParsing="false" onAction="#onRollPressed1" style="-fx-background-radius: 10; -fx-border-width: 2;" text="Roll" textAlignment="CENTER" textFill="#4d4d4d">
                <font>
                   <Font name="Arial" size="15.0" />
@@ -55,7 +55,7 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
-            <Label layoutX="355.0" layoutY="135.0" prefHeight="21.0" prefWidth="163.0" text="Score got from this roll:" textFill="#e7e7e7" />
+            <Label layoutX="355.0" layoutY="135.0" prefHeight="21.0" prefWidth="163.0" text="Score from this roll:" textFill="#e7e7e7" />
             <Label fx:id="p2_newScore" layoutX="518.0" layoutY="128.0" prefHeight="21.0" prefWidth="46.0" textFill="#fcfcfc">
                <font>
                   <Font size="25.0" />

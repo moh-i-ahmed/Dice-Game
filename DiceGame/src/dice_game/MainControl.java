@@ -35,7 +35,6 @@ public class MainControl extends Application{
     
     @FXML
     private ImageView logo;
-
   
     public void start(Stage primaryStage) throws IOException{
     	//Build and show the landing pane
@@ -45,17 +44,24 @@ public class MainControl extends Application{
 		primaryStage.show();	
 	}
 
+    /*
+     * Method controlling Play button, and initializing the Game
+     */
     @FXML
     void onPlayClicked(ActionEvent event) throws IOException {
+    	
     	//Get player names
     	String name1= player_name.getText();
     	String name2= player_name1.getText();
     	
     	//show the game pane
     	Stage stage=new Stage();
+    	stage.setTitle("Dice Game");
+    	
     	FXMLLoader loader=new FXMLLoader(getClass().getResource("Roll_Pane.fxml"));
 		Parent root=(Parent)loader.load();
-		RollControl sc =loader.getController();
+		
+		RollControl sc = loader.getController();
 		sc.setText(name1);
 		sc.setText1(name2);
 		
@@ -63,11 +69,14 @@ public class MainControl extends Application{
 		stage.show();
     }
     
+    /*
+     * Method controlling Help button 
+     */
     @FXML
     void onHelpClicked(ActionEvent event) throws IOException {
     	Stage stage=new Stage();
     	stage.setTitle("Dice Game Tutorial");
-		String videoFile = "video.mp4";    	 //Video File name
+		String videoFile = "resources/diceGame_tutorial.mp4";    	 //Video File name
 		
 		//Add the help video file
 		Media video = new Media(new File(videoFile).toURI().toString());
@@ -84,7 +93,6 @@ public class MainControl extends Application{
 		stage.show();
     }    
     
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);

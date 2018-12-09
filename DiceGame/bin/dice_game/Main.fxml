@@ -6,11 +6,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dice_game.MainControl">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e6efef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dice_game.MainControl">
    <children>
       <HBox layoutX="135.0" layoutY="13.0" prefHeight="63.0" prefWidth="300.0">
          <children>
-            <Label alignment="CENTER" prefHeight="61.0" prefWidth="293.0" text="Welcome to Dice game!">
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="293.0" text="Welcome to Dice Game!">
                <font>
                   <Font size="19.0" />
                </font>
@@ -29,7 +29,7 @@
             <TextField id="player_name" fx:id="player_name1" layoutX="14.0" layoutY="36.0" prefHeight="25.0" prefWidth="171.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="283.0" layoutY="261.0" mnemonicParsing="false" onAction="#onPlayClicked" text="Play" />
+      <Button layoutX="283.0" layoutY="261.0" mnemonicParsing="false" onAction="#onPlayClicked" prefHeight="21.0" prefWidth="38.0" text="Play" />
       <Button layoutX="531.0" layoutY="32.0" mnemonicParsing="false" onAction="#onHelpClicked" text="Help" />
       
    </children>

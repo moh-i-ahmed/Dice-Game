@@ -86,11 +86,15 @@ public class RollControl {
 		return p1_mainScore.getText();
 	}
 	
+	/*
+	 * Method controlling Player1's roll
+	 */
 	@FXML
 	void onRollPressed(ActionEvent event) {
 		try {
-			String musicFile = "roll_sound.mp3";     // For example
-
+			String musicFile = "resources/roll_sound.mp3";     //Audio file name
+			
+			//Add the dice roll audio file
 			Media sound = new Media(new File(musicFile).toURI().toString());
 			MediaPlayer mediaPlayer = new MediaPlayer(sound);
 			mediaPlayer.play();
@@ -99,16 +103,18 @@ public class RollControl {
 			
 		}catch(Exception e) {}
 		
+		//Display Player1's Scores
 		p1_newScore.setText(Integer.toString(game.score(p1)));
 		p1_mainScore.setText(Integer.toString(p1.getPlayerScore()));
 		
-		Image img1 = new Image("file:"+ game.dice.getFirst() +".png");
+		//Display dice images
+		Image img1 = new Image("file:resources/"+ game.dice.getFirst() +".png");
 		cube_1.setImage(img1);
 		
-		Image img2 = new Image("file:"+ game.dice.getSecond() +".png");
+		Image img2 = new Image("file:resources/"+ game.dice.getSecond() +".png");
 		cube_2.setImage(img2);
 		
-		Image img3 = new Image("file:"+ game.dice.getThird() +".png");
+		Image img3 = new Image("file:resources/"+ game.dice.getThird() +".png");
 		cube_3.setImage(img3);
 		
 		btn_roll1.setDisable(true);
@@ -117,11 +123,15 @@ public class RollControl {
 		round_count.setText(Integer.toString(game.turn()));
 	}
 	
+	/*
+	 * Method controlling Player2's roll
+	 */
 	@FXML
 	void onRollPressed1(ActionEvent event) {
 		try {
-			String musicFile = "roll_sound.mp3";     // For example
+			String musicFile = "resources/roll_sound.mp3";     //Audio file name
 
+			//Add the dice roll audio file
 			Media sound = new Media(new File(musicFile).toURI().toString());
 			MediaPlayer mediaPlayer = new MediaPlayer(sound);
 			mediaPlayer.play();
@@ -130,16 +140,18 @@ public class RollControl {
 			
 		}catch(Exception e) {}
 	
+		//Display Player2's Scores
 		p2_newScore.setText(Integer.toString(game.score(p2)));
 		p2_mainScore.setText(Integer.toString(p2.getPlayerScore()));
 
-		Image img1 = new Image("file:"+ game.dice.getFirst() +".png");
+		//Display dice images
+		Image img1 = new Image("file:resources/"+ game.dice.getFirst() +".png");
 		cube_11.setImage(img1);
 
-		Image img2 = new Image("file:"+ game.dice.getSecond() +".png");
+		Image img2 = new Image("file:resources/"+ game.dice.getSecond() +".png");
 		cube_21.setImage(img2);
 
-		Image img3 = new Image("file:"+ game.dice.getThird() +".png");
+		Image img3 = new Image("file:resources/"+ game.dice.getThird() +".png");
 		cube_31.setImage(img3);
 
 		round_count.setText(Integer.toString(game.turn()));
