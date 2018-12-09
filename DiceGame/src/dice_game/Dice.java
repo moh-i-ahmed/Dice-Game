@@ -1,3 +1,10 @@
+/* GROUP 8
+ * CO2001 User Interfaces & HCI Mini-project
+ * Lukas Petkevicius - lp288
+ * Mohammed Ahmed - mia17
+ * Dice Class
+ */
+
 package dice_game;
 
 public class Dice {

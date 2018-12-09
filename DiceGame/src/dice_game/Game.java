@@ -1,3 +1,10 @@
+/* GROUP 8
+ * CO2001 User Interfaces & HCI Mini-project
+ * Lukas Petkevicius - lp288
+ * Mohammed Ahmed - mia17
+ * Game Class
+ */
+
 package dice_game;
 
 import java.util.Arrays;
@@ -15,11 +22,12 @@ public class Game {
 	//Player Variables
 	private static Player player1;
 	private static Player player2;
-	private int count;
-	int [] rolls;
-	Dice dice = new Dice();
 	
+	private int count;		//Variable that tracks rounds
+	int [] rolls;			//Variable to store rolls
+	Dice dice = new Dice(); //Instantiate new dice class object
 	
+	//Build the Game
 	public Game(Player p1, Player p2) {
 		player1 = p1;
 		player2 = p2;
@@ -27,21 +35,17 @@ public class Game {
 	}
 	
 	int a=1;
-	public int turn () {
+	
+	//Method that controls Player Turn
+	public int turn() {
 		if(a == 2) {
-			
-			
 			if(draw(player1, player2)) {
-				
 				
 			}
 			else {
-			winner(player1);
-			winner(player2);
-			}
-			
-			
-			
+				winner(player1);
+				winner(player2);
+			}	
 			count++;
 			a = 0;
 		}
@@ -49,8 +53,6 @@ public class Game {
 		
 		return count;
 	}
-	
-	
 	
     //Determining if there's a Draw
     private boolean draw(Player player1, Player player2){
@@ -71,22 +73,12 @@ public class Game {
         	Alert alert = new Alert(AlertType.CONFIRMATION, player.getPlayerName() + " is the winner!    Wanna play again?", ButtonType.YES, ButtonType.NO);
         	alert.showAndWait();
 
-        	if (alert.getResult() == ButtonType.YES) {
-        		
-        		
+        	if (alert.getResult() == ButtonType.YES) {       		
         		cont.close();
-        			
         	}
-        	
-        	if (alert.getResult() == ButtonType.NO) {
+        	else if (alert.getResult() == ButtonType.NO) {
         		Platform.exit();
         	}
-        	
-        	
-        	
-        	
-        	
-        	
         	
         	System.out.println(player.getPlayerName() + " is the winner!");
             return true;
@@ -96,18 +88,17 @@ public class Game {
         }
     }
     
-    
+    //Method to generate and store 3 dice rolls
     public int [] rollDice(){
-    	
+    	//New dice every time we roll
     	dice = new Dice();
     	
     	int [] rolls= new int[3];
 		
-		for(int i=0;i<3;i++)
-		{
+		for(int i=0;i<3;i++){
 			rolls[i]= dice.rollDice(6);
 		}
-		
+		//Store dice values
 		dice.setFirst(rolls[0]);
 		dice.setSecond(rolls[1]);
 		dice.setThird(rolls[2]);	
@@ -122,11 +113,10 @@ public class Game {
 		int roll_score = 0;
 		boolean flag = true;
 		
-				//Variable to store rolls generated
+		//Variable to store rolls generated
 		int [] rolls= new int[3];
 		
 		rolls = rollDice();
-		
 		
 		int first = rolls[0];
 		
