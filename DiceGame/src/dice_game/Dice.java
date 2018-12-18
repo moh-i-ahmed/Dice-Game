@@ -13,7 +13,7 @@ public class Dice {
 	private int first, second, third;
 
 	public Dice() {
-		sides = SIDES;
+		sides = 6;
 	}
 	
 
